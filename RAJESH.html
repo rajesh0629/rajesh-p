@@ -1,0 +1,96 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Number Guessing Game</title>
+  
+    <style>
+        html {
+    font-family: sans-serif;
+    }
+      
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* background-color: aquamarine; */
+        background-image: url(https://picsum.photos/id/1/1400/800);
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: auto;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h1 style="text-align: center; color: white;
+">GUESS THE NUMBER</h1>
+<div class="rajesh" style="
+text-align: center;
+color: #1cdd0f;
+font-size: large;
+">
+    IF YOU CAN GUESS IT.<p></p>
+</div>
+        <div class="form">
+            <label for="guessField" style="
+            align-items: center;
+            color: aqua;
+            text-align: center;
+            margin-left: 472px;
+            font-size: x-large;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        
+        ">ENTER THE YOUR GUESSING NUM: </label>
+            <input type="text" id="guessField" class="guessField" style="
+            height: 30px;
+        ">
+            <div class="rajesh">
+                <br>
+                <input type="submit" value="SUBMIT GUESS" class="guessSubmit" id="submitguess" style="
+                margin-left: 607px;
+                color: red;
+            ">
+                <p id="result" style="color:white;text-align: center; " > </p>
+            
+            </div>
+                
+        </div>
+        </div>
+    </div>
+
+    <script type = "text/javascript">
+    var y = Math.floor(Math.random() * 100 + 1);
+    var guess = 1;
+         console.log(guess === 10, 'result')
+        var result = document.getElementById("result")
+    document.getElementById("submitguess").onclick = function(){
+   var x = document.getElementById("guessField").value;
+   if(x == y){    
+        console.log(guess)
+       result.textContent="CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN "+ guess + " GUESS "
+   }
+   else if(x > y) {  
+       console.log(guess)
+       guess++;
+           console.log(guess, 'guess after counting 1')
+      result.textContent = "OOPS SORRY!! TRY A SMALLER NUMBER"
+   }
+   else if(x < y){
+        console.log(guess)
+       guess++;
+       console.log(guess, 'guess after counting 1')
+      result.textContent = "OOPS SORRY!! TRY A GREATER NUMBER"
+   }  if(guess == 10) {
+       result.textContent = `Your try is over, please restart the game. Number is ${y}`
+   }
+}
+</script>
+</body>
+</html> 
